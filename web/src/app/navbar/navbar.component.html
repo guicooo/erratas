@@ -1,0 +1,51 @@
+<!-- Adicionar classe "notificacao" no nav quando tiver msg não lida -->
+<nav class="navbar-area">
+    <a class="menu-toggle">
+        <i class="fas fa-bars cursor" (click)="openSide()"></i>
+    </a>
+
+    <a routerLink="/home"><img class="iconeErratas" src="assets/img/ControleDeErratas_icone.png"></a>
+
+    <div class="btn-group">
+        <span *ngIf="appService.mensagens && appService.mensagensAtivas.length > 0" class="alert-red"></span>
+        <i class="far fa-user-circle icon-conta cursor" type="icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        
+        <div class="dropdown-menu dropdown-menu-right">
+            <div class="carret-drop"></div>
+            <button class="dropdown-item" type="button" routerLink="/notificacoes">Notificações<span *ngIf="appService.mensagens && appService.mensagensAtivas.length > 0" class="alert-red" style="right: 10px;top: 18px;"></span></button>
+            <button data-toggle="modal" data-target="#modalMinhaConta" class="dropdown-item" type="button">Minha conta</button>
+            <button (click)="logout()" class="dropdown-item" type="button">Sair</button>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Modal  Minha Conta-->
+<div class="modal fade" id="modalMinhaConta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">  
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Minha conta</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <h5>Alterar senha</h5>
+                <form  [formGroup]="newKey" (ngSubmit)="submitnewKey()">
+                <div class="form-group">
+                    <label for="InputPassword1">Nova senha</label>
+                    <input formControlName="senha" name ="senha" required autofocus type="password" class="form-control" id="InputPassword1" placeholder="Senha">
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword2">Confirme a nova senha</label>
+                    <input formControlName="confirmsenha" name ="confirmsenha" required type="password" class="form-control" id="InputPassword2" placeholder="Confirma">
+                </div>
+
+                <button type="submit" class="btn button-positive">Salvar</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>

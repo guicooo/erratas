@@ -1,0 +1,59 @@
+@import "../../scss/default.scss";
+           
+
+
+.listaCursos {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    li {
+      background-color: $azul-padrao;
+      width: fit-content;
+      padding: 5px;
+      color: white;
+      margin: 0px 10px 10px 0px;
+      float: left;
+      i {
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-left: 13px;
+      }
+    }
+}
+.ul-resp {
+  width: 50%; 
+  padding: 3rem 2rem 0rem 1rem;
+  @media #{$mobile}{
+    width: 100%; 
+    padding: 0;
+  }
+}
+
+.arrayImg {
+  padding-left: 0px;
+  list-style: none;
+  li {
+    width: 50%;
+    display:inline-block;
+    padding-right: 7px;
+    margin-top: 10px;
+  }
+  .mask-img {
+    position: relative;
+    i {
+      position: absolute;
+      top: 5px;
+      color: white;
+      float: left;
+      left: 5px;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+}
+            
+        
+ 

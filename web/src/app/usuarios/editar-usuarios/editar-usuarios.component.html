@@ -1,0 +1,112 @@
+<main class="row page-body">
+
+    <section class="col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+  
+      <nav class="page-nav">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h1>Editar usuário</h1>
+          <div class="line"></div>
+        </div>
+      </nav>
+  
+      <article class="form-container">
+        <div class="col-md-12">
+          <form [formGroup]="editUser" (ngSubmit)="submitEditUser()" class="form-area">
+  
+  
+            <div class="row col-md-12" style="margin-left: 0;">
+  
+              <ul class="col-xs-12 col-sm-12 col-md-10 col-lg-6 col-xl-6 ul-form">
+  
+                <li class="form-group">
+                  <label for="inputEmail4">Nome</label>
+                  <input formControlName="nome" name="nome" required autofocus class="form-control" id="inputEmail4">
+                </li>
+  
+                <li class="form-group">
+                    <label for="inputPassword4">Sobrenome</label>
+                    <input formControlName="sobrenome" name="sobrenome" required class="form-control" id="inputPassword4">
+                  </li>
+  
+              </ul>
+              <ul class="col-xs-12 col-sm-12 col-md-10 col-lg-6 col-xl-6 ul-form">
+  
+                  <li class="form-group">
+                    <label for="inputAddress">E-mail</label>
+                    <input formControlName="email" name="email" required type="email" class="form-control" id="inputAddress">
+                  </li>
+  
+                <li class="form-group">
+                  <label for="exampleFormControlSelect1">Departamento</label>
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="departamento" name="departamento" required [(ngModel)]="selectDepartamento">
+                    <option *ngFor="let item of listaDepartamentos" [value]="item.Id">{{item.Nome}}</option>
+                  </select>
+                </li>
+  
+              </ul>
+            </div>
+  
+
+            <hr>
+  
+            <div class="row col-md-12" style="margin-left: 0;">
+              <ul class="ul-form ul-listcursos">
+                  <app-list-cursos [Titulo]="'Responsável pelos cursos'" [arrayCursos]="this._appService.arrayCursos"></app-list-cursos>
+              </ul>
+            </div>
+  
+            <hr>
+  
+            <div class="row col-md-12" style="margin-left: 0;">
+                <ul class="ul-form ul-resp">                    
+                    <li class="form-group">
+                        <label for="inputState">Nível de acesso</label>
+                        <select formControlName="cargo" name="cargo" required id="inputState" class="form-control" [(ngModel)]="selectCargo">
+                          <option [value]="item.Id" *ngFor="let item of listCargos; let i = index">{{ item.Nome }}</option>
+                        </select>
+                      </li>
+                </ul>
+              </div>  
+              <div class="row pull-right">
+                  <button data-target="#modalDelete" 
+                          data-toggle="modal" 
+                          type="button" 
+                          class="btn btn-danger" 
+                          *ngIf="_appService.usuariosZerarSenha" 
+                          style="margin-right: 30px;"
+                          >Zerar Senha</button>
+                  <button type="submit" class="btn btn-primary button-positive">Atualizar</button>
+              </div> 
+
+          </form>
+
+        </div>
+  
+      </article>
+  
+    </section>
+  
+  </main>
+
+<!-- Modal APAGAR-->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDeleteLabel">Zerar senha</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo zerar a senha do <b>{{editUser.controls.nome.value}}</b>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" #btnClose class="btn btn-primary" data-dismiss="modal">Não</button>
+        <button type="button" (click)="zerarSenha()" class="btn btn-danger">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>  
+  
+  

@@ -1,0 +1,74 @@
+<main class="row col-12 page-body">
+
+  <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+
+    <nav class="page-nav">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding">
+        <h1>Relatórios</h1>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <article class="row form-container">
+      <div class="col-md-6">
+        <h5 class="title">Usuários</h5>
+        <i class="fas fa-print cursor" (click)="printUser()"></i>
+        <div class="col-relatorio">
+          <canvas baseChart
+                      height="400px"
+                      [data]="listaUsuariosDados"
+                      [labels]="listaUsuariosNome"
+                      [chartType]="doughnutChartType"
+                      [colors]="coresRelatorios"
+                      [options] = "options"
+                      *ngIf="listaUsuariosDados.length > 0"
+                      >
+            </canvas>   
+            <p *ngIf="listaUsuariosDados.length == 0">Dados insuficientes</p>
+        </div>
+        
+      </div>
+
+      <div class="col-md-6">
+          <h5 class="title">Departamentos</h5>
+          <i class="fas fa-print cursor" (click)="printDepartamento()"></i>
+          <div class="col-relatorio">
+            <canvas baseChart
+                        height="400px"
+                        [data]="listaDepartamentoDados"
+                        [labels]="listaDepartamentoNome"
+                        [chartType]="doughnutChartType"
+                        [colors]="coresRelatorios"
+                        [options] = "options"
+                        *ngIf="listaDepartamentoDados.length > 0"
+                        >
+              </canvas>   
+              <p *ngIf="listaDepartamentoDados.length == 0">Dados insuficientes</p>       
+          </div>
+      </div>
+
+    </article>
+  </section>
+</main>
+
+<div id="printHead" style=" display: none; 
+                            width: 100%; 
+                            text-align: center; 
+                            padding: 10px;">
+    <img class="iconeErratas" style="     width: 200px;" 
+    src="assets/img/ControleDeErratas_black.png">
+</div>
+
+<div id="printUser" style=" display: none;">
+  <div *ngFor="let item of arrayUsuarios">
+    <p><b>Nome</b>  {{item.Nome}}
+    <b>Quantidade</b>  {{item.Quantidade}}</p>
+  </div>
+</div>
+
+<div id="printDepartamento" style=" display: none;">
+  <div *ngFor="let item of arrayDepartamentos">
+    <p><b>Nome</b>  {{item.Nome}}
+    <b>Quantidade</b>  {{item.Quantidade}}</p>
+  </div>
+</div>

@@ -1,0 +1,142 @@
+@import "../scss/default.scss";
+.home {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    height: 15rem;
+    padding: 0;
+    @media #{$mobile}{
+        margin: 0;
+    } 
+    .botao-grande {   
+        display: flex;
+        justify-content: center;
+        align-items: center;       
+        background-image: url(../../assets/img/relatorios_02.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        opacity: 1;
+        &:hover {
+            opacity: 0.9;
+        }
+
+        .botao-relatorios {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    i {
+        font-size: 70px;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+
+        h6 {
+            margin-top: 0.1rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.grupo-botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.4rem;
+    height: 14rem;
+    padding: 0;   
+    @media #{$mobile}{
+        margin: 10px 0;
+    } 
+    .botao-erratas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../../assets/img/erratas.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;   
+        opacity: 1; 
+        &:hover {
+            opacity: 0.9;
+        }  
+        @media #{$mobile}{
+            margin: 10px 0;
+            padding: 60px;
+        }   
+    }
+    
+    .botao-usuarios {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../../assets/img/usuarios.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;  
+        opacity: 1;  
+        &:hover {
+            opacity: 0.9;
+        }
+        @media #{$mobile}{
+            margin: 10px 0;
+            padding: 60px;
+        }
+    }
+    
+    .botao-itens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../../assets/img/itens.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;   
+        opacity: 1; 
+        &:hover {
+            opacity: 0.9;
+        }
+        @media #{$mobile}{
+            margin: 10px 0;
+            padding: 60px;
+        }
+    }
+
+    i {
+        font-size: 70px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+
+        h6 {
+            margin-top: 0.3rem;
+            font-size: 1.2rem;
+        }
+    }
+
+}
+.botao-erratas, .botao-usuarios, .botao-itens {
+    margin: 0px 20px;
+}

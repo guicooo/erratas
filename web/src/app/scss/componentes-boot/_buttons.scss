@@ -1,0 +1,84 @@
+@import "../../../node_modules/bootstrap/scss/_buttons.scss";
+
+
+button {
+    border-radius: 0  !important;
+    cursor: pointer
+}
+
+.botao-cadastrar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+.button-positive {
+    padding: 0.4rem 2rem;
+    background: linear-gradient(45deg, #005190 0%,#007fa9 30%,#1294ac 70%, #5AAD9C 100%);
+    border: none;
+    color: #fff;
+}
+.button-negative {
+    padding: 0.4rem 2rem;
+    background: white;
+    border: 2px solid $azul-padrao;
+    color: $azul-padrao;
+    &:hover {
+        border: 2px solid $azul-padrao;
+        background: white;
+        color: $azul-padrao;
+    }
+}
+
+.submit-img {
+    width: 100%;
+    height: 2rem;
+    margin: 1.4rem 0 0 0;
+    padding: 0;        
+    button {
+        padding: 0;
+    }        
+    .button-img {
+        background-color: $azul-padrao;
+        border: none;
+        font-size: 1.4rem;
+        color: #fff;
+    }        
+    .button-lixo {
+        background-color: #fff;
+        border: none;
+        font-size: 1.4rem;
+        color: $azul-padrao;
+    }        
+}
+.btn-primary {
+    background-color: $azul-padrao;
+}
+.btn-closed {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    visibility: hidden;
+    @media #{$mobile}{
+        visibility: visible;
+    }
+    .line-1 {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        transform: rotate(50deg);
+        top: 17px;
+    }
+    .line-2 {
+        width: 30px;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        transform: rotate(-50deg);
+        top: 17px;        
+    }
+}

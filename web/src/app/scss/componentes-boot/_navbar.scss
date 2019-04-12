@@ -1,0 +1,18 @@
+@import "../../../node_modules/bootstrap/scss/_navbar.scss";
+
+.navbar-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    width: 100%;
+    font-size: 2rem;
+    color: #008EB1;
+    @media #{$mobile}{
+        margin-top: 0.5rem;
+    }
+}
+
+.icon-conta {
+    display: flex;
+    align-items: center;
+}

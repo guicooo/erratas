@@ -1,0 +1,42 @@
+<main class="row col-12 page-body">
+
+  <section class=" col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+
+    <nav class="page-nav">
+      <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>Adicionar item</h1>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <article class="form-container">
+      <div class="col-md-12">
+        <form class=" col-sm-12 col-md-12 col-lg-12 col-xl-12 form-area">
+          <h6>Selecionar o item:</h6>
+          <ul class=" ul-itens">
+            <li class="row" *ngIf="_appService.disciplinasCadastrar">
+              <input type="radio" routerLink="disciplina" name="item" value="disciplina" id="discInput">
+              <label for="discInput">Disciplina</label>
+            </li>
+            <li class="row" *ngIf="_appService.cursosCadastrar">
+              <input type="radio" routerLink="curso" name="item" value="curso" id="cursoInput">
+              <label for="cursoInput">Curso</label>
+            </li>
+          </ul>
+
+          <!-- <ul class="col-8">
+            <li><a routerLink="usuarios">Usuários</a></li>
+            <li><a routerLink="disciplina">Disciplina</a></li>
+            <li><a routerLink="curso">Curso</a></li>
+            <li><a routerLink="professor">Professor</a></li>
+          </ul> -->
+          <hr>
+          <router-outlet class="col-md-12"></router-outlet>
+        </form>
+      </div>
+      
+    </article>
+    
+  </section>
+  
+</main>

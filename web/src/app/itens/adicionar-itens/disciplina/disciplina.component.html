@@ -1,0 +1,32 @@
+<h5>Disciplina</h5>
+
+<form [formGroup]="newDisciplina" (ngSubmit)="submitnewDisciplina()">
+
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="modelo">Codigo modelo</label>
+      <input formControlName="modelo" name="modelo" required autofocus type="text" class="form-control" id="modelo"
+        placeholder="Codigo modelo da disciplina">
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="name">Nome</label>
+      <input formControlName="nome" name="nome" required type="text" class="form-control" id="name" placeholder="Nome da disciplina">
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-5">
+          <app-list-cursos [Titulo]="'Cursos'"  [arrayCursos]="arrayBlank"></app-list-cursos>
+      </div>
+
+  </div>
+
+
+  <div class="botao-cadastrar">
+    <button type="submit" class="btn btn-primary button-positive">Cadastrar</button>
+  </div>
+  
+</form>

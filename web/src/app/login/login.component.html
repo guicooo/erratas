@@ -1,0 +1,40 @@
+<main class="bg">
+  <section class="container ">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 area">
+      <img src="assets/img/ControleDeErratas_logo.png" alt="" class="col-10 col-sm-6 col-md-12 col-lg-6 col-xl-6 logo">
+      <div class="detalhe_login"></div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 login_area">
+        <form class="form-signin" [formGroup]="formLogin" (ngSubmit)="logar()">
+          <label class="col-12"><input type="text" formControlName="usuario" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10" placeholder="Usuário.."  required autofocus/><span class="usuario"></span></label>
+          <label class="col-12"><input type="password" formControlName="senha" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10" placeholder="Senha.."/><span class="senha"></span></label>
+          <a href="javascript:void(0)" (click)="abrirModal()" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10">Esqueceu a senha?</a>
+          <button type="submit" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- <footer class="footer_login">
+    Copyright © 1997-2018 UNIP - Universidade Paulista. Todos os direitos reservados. Política de Privacidade
+  </footer> -->
+</main>
+
+<div id="modalCadastrarSenha" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cadastrar Senha</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center frmCadastrarSenha">
+        <form class="form-signin" [formGroup]="formCadastrarSenha" (ngSubmit)="cadastrarSenha()">
+          <input type="text" formControlName="email" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10" placeholder="Usuário.."  required autofocus/>
+          <input type="password" formControlName="senha" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10" placeholder="Senha.." required/>        
+          <input type="password" formControlName="confirmaSenha" class="col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10" placeholder="Confirma Senha.." required/>
+          <button type="submit" class="btn-cadastrar col-10 col-sm-10 col-md-10 col-lg-12 col-xl-10">Cadastrar</button>
+        </form>
+      </div>     
+    </div>
+  </div>
+</div>

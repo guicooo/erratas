@@ -1,0 +1,40 @@
+<main class="row col-12 page-body">
+
+    <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+  
+      <nav class="page-nav">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding">
+          <h1>Permissões</h1>
+          <div class="line"></div>
+        </div>
+      </nav>
+  
+      <article class="row form-container">
+        <div class="col-md-12">
+          <div class="col-relatorio">
+            <select (change)="selectCargo($event.target.value)">
+                <option *ngFor="let item of listarCargos" [value]="item.Id">{{item.Nome}}</option>
+            </select>
+
+            <div class="list-permissao" *ngFor="let item of getModulos">
+                <h6>{{item.Nome}}</h6>
+                <ul class="row">
+                  <li class="col-md-4" *ngFor="let item2 of item.Permissoes">
+                    <span class="col-9 no-padding">{{item2.Descricao}}</span>
+                    <label class="col-3 no-padding">
+                      <input  *ngIf="_appService.permissoesAtualizar" type="checkbox" class="ios-switch green  bigswitch" (change)="checkboxChanged(item2.Id, item.Id)" [checked]="item2.Autorizado"/>
+                      <div><div></div></div>
+                    </label>
+                  </li>
+                </ul>              
+            </div>
+          </div>
+
+        </div>
+
+  
+      </article>
+    </section>
+  </main>
+
+  

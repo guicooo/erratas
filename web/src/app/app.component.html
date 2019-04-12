@@ -1,0 +1,18 @@
+<div class="row page active" [ngClass]="{'side-open': appService.openSide}">
+
+  <app-sidebar *ngIf="mostrarSidebar" class="app-sidebar col-md-2"></app-sidebar>
+
+  <div *ngIf="!mostrarSidebar" class="col-12 login">
+    <router-outlet></router-outlet>
+  </div>  
+
+  <div *ngIf="mostrarSidebar" class="col-md-10 col-xs-12 conteudo">
+    <app-navbar class="navbar" ></app-navbar>
+    <router-outlet class="geral"></router-outlet>
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
+
+<ng-progress [spinner]="false" [thick]="true"></ng-progress>

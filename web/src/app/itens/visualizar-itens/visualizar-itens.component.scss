@@ -1,0 +1,23 @@
+@import "../../scss/default.scss";
+
+
+.itens-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+    .list-container {
+    padding: 5rem;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 0px $box;
+    -webkit-box-shadow: 2px 2px 5px 0px $box;
+    -moz-box-shadow: 2px 2px 5px 0px $box;
+    }    
+}
+
+h5 {
+    i {
+        cursor: pointer;
+        color: $azul-padrao;
+        margin-left: 15px;
+    }
+}

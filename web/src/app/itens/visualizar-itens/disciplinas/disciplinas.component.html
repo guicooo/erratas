@@ -1,0 +1,8 @@
+<ul class="list-itens">
+
+  <li *ngFor="let item of listDisciplinas">
+      <div class="max-lines-1">{{item.Nome}}</div>
+      <i  *ngIf="_appService.disciplinasAtualizar" class="fas fa-pen cursor" [routerLink]="'/itens/editar/' + item.Id"></i>
+  </li>
+</ul>
+

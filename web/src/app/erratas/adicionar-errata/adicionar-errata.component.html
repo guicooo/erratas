@@ -1,0 +1,201 @@
+<main class="row col-12 page-body">
+
+  <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+
+    <nav class="page-nav">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>Adicionar errata</h1>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <article class="form-container">
+      <div class="col-12">
+        <form class="row col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 form-area no-margin"  [formGroup]="newErrata" (ngSubmit)="submitNewErrata()">
+          <ul class="col-sm-12 col-md-10 col-lg-6 col-xl-6 ul-form">
+
+
+            <li class="form-group">
+              <label>Código modelo</label>
+              <input (change)="getModelo($event)" type="text" class="form-control" formControlName="codModelo" name ="codModelo" required autofocus>
+            </li>
+            
+
+            <li class="form-group">
+                <label>Disciplina</label>
+                <input disabled type="text" class="form-control" formControlName="disciplina" name ="disciplina" required [(ngModel)]="disciplinaInput">
+            </li>            
+
+
+            <li class="form-group">
+              <label>Código oferta</label>
+              <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control" formControlName="codOferta" name ="codOferta" required>
+            </li>
+
+            <div class="row no-margin">
+              <li class="form-group" [ngClass]="{'disabled': disabled}" style="width: 100%;">
+            
+                <label for="curso">Cursos</label>
+                <mat-form-field class="example-full-width">
+                  <input id="curso" type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="curso" [(ngModel)]="inputCurso"  required>
+                  <i class="fas fa-search icon-input"></i>
+                  <mat-autocomplete autoActiveFirstOption #curso="matAutocomplete" (optionSelected)='getCursos($event.option.value)'>
+                    <mat-option *ngFor="let option of filtroCursos | async" [value]="option.Id +' - '+ option.Nome">
+                      {{option.Nome}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                
+              </li>
+                
+              <ul class="listaCursos" >
+                <li *ngFor="let item of arrayCursos">
+                  <span>{{item.Nome}}</span>
+                  <i class="fas fa-times text-center" (click)="removeCurso(item.Id)"></i>
+                </li>
+              </ul>        
+            </div>
+            
+
+            <li class="form-group">
+              <label>Data de solicitação</label>
+              <input [attr.disabled]="disabled ? '' : null" type="date" class="form-control" formControlName="date" name ="date" required>
+            </li>
+
+            
+            <li class="form-group">
+              <label>Professor</label>
+              <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control" formControlName="professor" name ="professor" required>
+            </li>
+
+            <li class="form-group">
+              <label for="motivoDaErrata">Motivo da errata</label>
+              <select [attr.disabled]="disabled ? '' : null" [(ngModel)]="selectMotivo" class="form-control" id="motivoDaErrata" formControlName="motivo" name ="motivo" required>
+                <option *ngFor="let item of motivoList" [value]="item.Id">{{ item.Descricao }}</option>
+              </select>
+            </li>
+            <li class="form-group">
+              <label for="itemAlterado">Item alterado</label>
+              <select [attr.disabled]="disabled ? '' : null" [(ngModel)]="selectItem" class="form-control" id="itemAlterado" formControlName="item" name ="item" required>
+                <option *ngFor="let item of itemList" [value]="item.Id">{{ item.Nome }}</option>
+              </select>
+            </li>
+
+
+            <li class="form-group">
+              <label for="unidade">Unidade</label>
+              <select [attr.disabled]="disabled ? '' : null" [(ngModel)]="selectUnidade" class="form-control" id="unidade"  formControlName="unidade" name ="unidade" required>
+                <option *ngFor="let item of unidadeList" [value]="item.Id">{{ item.Nome }}</option>
+              </select>
+            </li>
+
+
+          </ul>
+
+
+          <ul class="col-sm-12 col-md-10 col-lg-6 col-xl-6 ul-form">
+
+
+            <li class="form-group" [ngClass]="{'disabled': disabled}">
+              <label for="responsavelInsercao">Responsável pela inserção</label>
+              <mat-form-field class="example-full-width">
+                  <input  id="responsavelInsercao" 
+                          type="text" 
+                          aria-label="Number" 
+                          matInput 
+                          [formControl]="myControl" 
+                          [matAutocomplete]="responsavelI" 
+                          formControlName="responsavelI" 
+                          name ="responsavelI" 
+                          required>
+
+                  <mat-autocomplete autoActiveFirstOption #responsavelI="matAutocomplete">
+                    <mat-option *ngFor="let option of filtroUsuarios | async" [value]="option.Nome +' '+ option.SobreNome" (click)="getInsercao(option.Id)">
+                      {{option.Nome}} {{option.SobreNome}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+            </li>
+
+
+            <li class="form-group" [ngClass]="{'disabled': disabled}">
+              <label for="responsavelRevisao">Responsável pela revisão</label>
+              <mat-form-field class="example-full-width">
+                  <input [attr.disabled]="disabled ? '' : null" 
+                          id="responsavelRevisao" 
+                          type="text" 
+                          aria-label="Number" 
+                          matInput 
+                          [formControl]="myControl" 
+                          [matAutocomplete]="responsavelR" 
+                          formControlName="responsavelR" 
+                          name ="responsavelR"
+                          required>
+                          
+                  <mat-autocomplete autoActiveFirstOption #responsavelR="matAutocomplete">
+                    <mat-option *ngFor="let option of filtroUsuarios | async" [value]="option.Nome +' '+ option.SobreNome"  (click)="getRevisao(option.Id)">
+                      {{option.Nome}} {{option.SobreNome}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+            </li>
+
+
+            <li class="form-group">
+              <label for="aviso">Aviso postado na disciplina</label>
+              <select [attr.disabled]="disabled ? '' : null" [(ngModel)]="selectAviso" class="form-control" id="aviso" formControlName="aviso" name ="aviso" required>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+            </li>
+
+
+            <li class="form-group">
+              <label for="instituto">Instituto</label>
+              <select [attr.disabled]="disabled ? '' : null" [(ngModel)]="selectInstituto"  class="form-control" id="instituto" formControlName="instituto" name ="instituto" required>
+                <option *ngFor="let item of institutoList" [value]="item.Id">{{ item.Descricao }}</option>
+              </select>
+            </li>
+
+
+            <li class="form-group">
+              <label>Descrição da alteração realizada</label>
+              <textarea [attr.disabled]="disabled ? '' : null" type="text" class="form-control" rows="12" formControlName="descricao" name ="descrisao" required></textarea>
+            </li>
+
+
+            <li class="row submit-img col-12">
+              <input [attr.disabled]="disabled ? '' : null" type="file" id="fileInput" (change)="onFileChange($event)" style="border: 0;" style="display:none">
+              <input [attr.disabled]="disabled ? '' : null" type="text" class="form-control col-8" placeholder="Inserir imagem" [value]="inputImageName">
+              <button type="button" class="button-img col-2">
+                <i class="fas fa-images"></i>
+              </button>
+              <button type="button" class="button-lixo col-2 col-md-2 col-lg-2 col-xl-2" (click)="removeImage()">
+                <i class="far fa-trash-alt"></i>
+              </button>
+              
+            </li>
+
+
+            <ul class="arrayImg" >
+                <li *ngFor="let item of arrayImg" >
+                  <div class="mask-img">
+                    <img [src]="item.Link" width="100%">
+                  </div>
+                </li>
+            </ul>
+
+            <li class="botao-cadastrar">
+              <button class="button-positive" type="submit">Cadastrar</button>
+            </li>
+
+          </ul>
+        </form>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+   

@@ -1,0 +1,62 @@
+<main class="row col-12 page-body">
+
+  <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+
+    <nav class=" page-nav">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>Usuários cadastrados</h1>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <article class="form-container">
+      <div class="col-12 table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Cargo</th>
+              <!-- <th scope="col"></th> -->
+              <th *ngIf="appService.usuariosAtualizar" scope="col"></th>
+              <th *ngIf="appService.usuariosRemover" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of userList">
+              <td>{{ item.Nome }}</td>
+              <td>{{ item.Email }}</td>
+              <td>{{ item.Cargo.Nome }}</td>
+              <!-- <td><button class="btn button-negative" style="padding: 0.3rem 1rem;">Alterar curso</button></td> -->
+              <td *ngIf="appService.usuariosAtualizar"><button class="btn button-positive" [routerLink]="'/usuarios/editar/' + item.Id">Editar</button></td>
+              <td *ngIf="appService.usuariosRemover"><i data-target="#modalDelete" data-toggle="modal" (click)="deleteModal(item.Nome, item.SobreNome, item.Id)"
+                  class="far fa-trash-alt"></i></td>
+              <!-- <td><i (click)="deleteUser(item.Id)" class="far fa-trash-alt"></i></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- Modal APAGAR-->
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDeleteLabel">Apagar usuário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo apagar <b>{{ userName }}</b>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" #btnClose class="btn btn-primary" data-dismiss="modal">Não</button>
+        <button type="button" (click)="deleteUser(userId)" class="btn btn-danger">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>

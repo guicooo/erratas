@@ -1,0 +1,35 @@
+<main class="row home">
+    <section class="col-10">
+
+        <article class="botao row"  *ngIf="appService.relatorios">
+            <div class="col-md-10 botao-grande">
+                <a routerLink="/relatorios" class="botao-relatorios">
+                    <i class="fas fa-chart-bar"></i>
+                    <h6>Relatórios</h6>
+                </a>
+            </div>
+        </article>
+
+        <article class="grupo-botoes row">
+            <div class="col-md-3 col-xs-12 botao-erratas"  *ngIf="appService.errataListar">
+                <a routerLink="/erratas">
+                    <i class="fas fa-quote-left"></i>
+                    <h6>Erratas</h6>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-12 botao-usuarios"  *ngIf="appService.usuariosListar">
+                <a routerLink="/usuarios">
+                    <i class="far fa-user"></i>
+                    <h6>Usuários</h6>
+                </a>
+            </div>
+            <div class="col-md-3 col-xs-12 botao-itens"  *ngIf="appService.cursosListar || appService.cursosListar">
+                <a routerLink="/itens">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h6>Itens</h6>
+                </a>
+            </div>
+            
+        </article>
+    </section>
+</main>

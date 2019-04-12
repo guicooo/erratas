@@ -1,0 +1,30 @@
+@import "../../../node_modules/bootstrap/scss/_tables.scss";
+
+table {
+    thead {
+        th {
+            color: $text;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+    }
+    tbody {
+        tr {
+            td {
+                i {
+                    color: $azul-padrao;
+                    font-size: 25px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+.table th, .table td {
+    border-top: none; 
+    padding: 1em;
+}
+.table thead th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}

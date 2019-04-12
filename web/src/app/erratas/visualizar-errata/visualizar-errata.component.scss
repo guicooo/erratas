@@ -1,0 +1,20 @@
+@import "../../scss/default.scss";
+
+:host /deep/ .ngx-pagination{
+    text-align: center;
+    .current {
+        background: $azul-padrao;
+    }
+
+}
+.arrayImg {
+    list-style: none;
+    padding: 0;
+    li {
+        margin-right: 3px;
+        width: 48%;
+        display: inline-block;
+ 
+    }
+
+}

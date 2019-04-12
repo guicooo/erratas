@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F8D7CA7-976F-4036-B3C9-C3D6C6326D4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Erratas.Domain</RootNamespace>
+    <AssemblyName>Erratas.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.2\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.2\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.0.101\lib\net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Cargo.cs" />
+    <Compile Include="Entities\CargoPermissao.cs" />
+    <Compile Include="Entities\CargoPermissaoModulo.cs" />
+    <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\CursoDisciplina.cs" />
+    <Compile Include="Entities\Departamento.cs" />
+    <Compile Include="Entities\Disciplina.cs" />
+    <Compile Include="Entities\Errata.cs" />
+    <Compile Include="Entities\ErrataCurso.cs" />
+    <Compile Include="Entities\ImagemErrata.cs" />
+    <Compile Include="Entities\Instituto.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Log.cs" />
+    <Compile Include="Entities\Mensagem.cs" />
+    <Compile Include="Entities\Modulo.cs" />
+    <Compile Include="Entities\MotivoErrata.cs" />
+    <Compile Include="Entities\Permissao.cs" />
+    <Compile Include="Entities\Relatorio.cs" />
+    <Compile Include="Entities\Unidade.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\UsuarioCurso.cs" />
+    <Compile Include="Interfaces\Repositories\ICargoPermissaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICargoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICursoDisciplinaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ICursoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDepartamentoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDisciplinaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IErrataCursoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IErrataImagemRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IErrataRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IInstitutoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IItemRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ILogRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IMensagemRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IModuloRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IMotivoErrataRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPermissaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRelatorioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUnidadeRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioCursoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\ICargoPermissaoService.cs" />
+    <Compile Include="Interfaces\Services\ICargoService.cs" />
+    <Compile Include="Interfaces\Services\ICursoService.cs" />
+    <Compile Include="Interfaces\Services\IDisciplinaService.cs" />
+    <Compile Include="Interfaces\Services\IErrataService.cs" />
+    <Compile Include="Interfaces\Services\IExtrapolacaoService.cs" />
+    <Compile Include="Interfaces\Services\IMensagemService.cs" />
+    <Compile Include="Interfaces\Services\IPermissaoService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CargoPermissaoService.cs" />
+    <Compile Include="Services\CargoService.cs" />
+    <Compile Include="Services\CursoService.cs" />
+    <Compile Include="Services\DisciplinaService.cs" />
+    <Compile Include="Services\ErrataService.cs" />
+    <Compile Include="Services\ExtrapolacaoService.cs" />
+    <Compile Include="Services\MensagemService.cs" />
+    <Compile Include="Services\PermissaoService.cs" />
+    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="Validations\CargoPermissao\AtualizarCargoPermissaoModuloValidator.cs" />
+    <Compile Include="Validations\CargoPermissao\AtualizarCargoPermissaoValidator.cs" />
+    <Compile Include="Validations\Cargo\AtualizarCargoValidator.cs" />
+    <Compile Include="Validations\Curso\AtualizarCursoValidator.cs" />
+    <Compile Include="Validations\Curso\CadastrarCursoValidator.cs" />
+    <Compile Include="Validations\Disciplina\AtualizarDisciplinaValidator.cs" />
+    <Compile Include="Validations\Disciplina\CadastrarDisciplinaValidator.cs" />
+    <Compile Include="Validations\Disciplina\DisciplinaValidator.cs" />
+    <Compile Include="Validations\Errata\AtualizarErrataValidator.cs" />
+    <Compile Include="Validations\Errata\CadastrarErrataValidator.cs" />
+    <Compile Include="Validations\Errata\ErrataValidator.cs" />
+    <Compile Include="Validations\Usuario\AtualizarUsuarioValidator.cs" />
+    <Compile Include="Validations\Cargo\CadastrarCargoValidator.cs" />
+    <Compile Include="Validations\Usuario\CadastrarUsuarioValidator.cs" />
+    <Compile Include="Validations\Cargo\CargoValidator.cs" />
+    <Compile Include="Validations\Cargo\DeletarCargoValidator.cs" />
+    <Compile Include="Validations\Usuario\NovaSenhaValidator.cs" />
+    <Compile Include="Validations\Usuario\UsuarioValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

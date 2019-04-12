@@ -1,0 +1,208 @@
+@import "../scss/default.scss";
+
+.bg {
+    height: 100vh;
+    background-image: url(../../assets/img/ControleDeErratas.png);
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
+
+.area {
+    height: 15rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.detalhe_login {
+    background-color: #fff;
+    height: 90%;
+    width: 0.1rem;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    opacity: 0.5;
+}
+
+.login_area {
+    float: right;
+
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    label {
+        padding: 0;
+
+        input {
+            padding: 0.3rem 1.4rem 0.3rem 2.6rem;
+            line-height: 30px;
+            border: none;    
+            outline: none;
+            opacity: 0.6;
+        }
+    }
+
+    a {
+        padding: 0;
+        color: #fff;
+    }
+
+    button {
+        cursor: pointer;
+        padding: 0.5rem 0;
+        text-align: center;
+        border: none;
+        background: linear-gradient(to right, #00ADD1, #7EAFB7, #85C9EF);
+        color: #fff;
+    }
+}
+
+.usuario:before {
+    position: absolute;
+    top: 50%;
+    right: 82%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font: normal normal normal 1.1rem FontAwesome;
+    content: "\f007";    
+}
+
+.senha:before {
+    position: absolute;
+    top: 50%;
+    right: 82%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font: normal normal normal 1.1rem FontAwesome;
+    content: "\f023";
+}
+
+.font-awesome:focus {
+    border-color: lightblue;
+}
+
+.footer_login {
+    width: 100vw;
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.9rem;   
+}
+
+@media(max-width: 1200px) {
+
+    .usuario:before {
+        right: 86%;
+        transform: translateY(-50%); 
+    }
+    
+    .senha:before {
+        right: 86%;
+        transform: translateY(-50%);
+    }
+}
+
+@media(max-width: 991px) {
+    
+    .area {
+        height: 15rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .logo {
+        top: 0;
+    }
+    
+    .detalhe_login {
+        height: 0;
+        width: 0;
+    }
+    
+    .login_area {
+        float: none;
+        top: 40%;
+        left: 50%;
+    
+        label {
+            padding: 0;
+        }
+    
+        a {
+            padding: 0;
+        }
+    
+    }
+}
+
+@media(max-width: 768px) {
+    
+    .logo {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .login_area {
+        width: 50vw;
+        top: 35%;    
+    }
+
+    .usuario:before {
+        right: 82%;
+    }
+    
+    .senha:before {
+        right: 82%;
+    }
+}
+
+@media(max-width: 578px) {
+
+    .bg {
+        background-image: none;   
+        //@extend %gradiente_bg; 
+        background: linear-gradient(to right, #077aa6, #1896ab);
+    }    
+
+    .login_area {
+        width: 100vw;    
+    }
+
+    .usuario:before {
+        right: 84%;
+    }
+    
+    .senha:before {
+        right: 84%;
+    }
+}
+
+
+.frmCadastrarSenha {
+    & input {
+        padding: 0.3rem 0;        
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        margin: 5px;
+    }
+
+    & .btn-cadastrar {
+        cursor: pointer;
+        padding: 0.5rem 0;
+        text-align: center;
+        border: none;
+        background: linear-gradient(to right, #00ADD1, #7EAFB7, #85C9EF);
+        color: #fff;
+    }
+}

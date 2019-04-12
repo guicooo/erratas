@@ -1,0 +1,33 @@
+@import "../../../node_modules/bootstrap/scss/_type.scss";
+
+
+.page-nav {
+    display: flex;
+    justify-content: center; 
+    padding: 0;   
+    h1 {
+        padding-left: 1rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $azul-padrao;
+    }
+    .line {
+        height: 0.1rem;
+        background-color: $azul-padrao;
+    }
+    @media(max-width: 576px) {
+        padding: 0;
+        h1 {
+            padding-left: 0;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+h5 {
+    padding-bottom: 2rem;
+    font-weight: 400;
+}
+
+
+

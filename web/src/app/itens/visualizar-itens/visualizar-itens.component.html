@@ -1,0 +1,47 @@
+<main class="row col-12 page-body">
+
+        <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+    
+            <nav class="page-nav">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding">
+                    <h1>Itens cadastrados</h1>
+                    <div class="line"></div>
+                </div>
+            </nav>
+    
+            <article class="col-12 itens-container">
+                <div class="col-12 list-container">
+
+                    <div class="row" *ngIf="appService.cursosListar">
+                        <h5>
+                            Cursos
+                            <i  (click)="listarCursos()" class="fas" [ngClass]="{'fa-eye-slash': listCursos, 'fa-eye' : !listCursos}"></i>
+                            <!-- <i class="fas fa-pen" (click)="editCursos()"></i> -->
+                        </h5>
+                        <div *ngIf="listCursos">
+                            <app-cursos ></app-cursos>
+                        </div>  
+                    </div>
+
+                    <div class="row" *ngIf="appService.disciplinasListar">
+                        <h5>
+                            Disciplinas
+                            <i  (click)="listarDisci()" class="fas" [ngClass]="{'fa-eye-slash': listDisci, 'fa-eye' : !listDisci}"></i>
+                            <!-- <i class="fas fa-pen" (click)="editDisci()"></i> -->
+                        </h5>
+                        <div *ngIf="listDisci">
+                            <app-disciplinas></app-disciplinas>
+                        </div>                     
+                    </div>                    
+
+                    
+
+                </div>
+            </article>
+        </section>
+    </main>
+
+    
+
+
+

@@ -1,0 +1,52 @@
+<main class="row page-body">
+
+    <section class="col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+  
+      <nav class="page-nav">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h1>Editar disciplina</h1>
+          <div class="line"></div>
+        </div>
+      </nav>
+  
+      <article class="form-container">
+        <div class="col-md-12">
+            <form [formGroup]="editDisciplina" (ngSubmit)="submitEditUser()" class="form-area">
+
+
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label for="modelo">Codigo modelo</label>
+                    <input [value]="DisciId" formControlName="modelo" name="modelo" required autofocus type="text" class="form-control" id="modelo">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <label for="name">Nome</label>
+                    <input [value]="DisciName" formControlName="nome" name="nome" required type="text" class="form-control" id="name">
+                  </div>
+                </div>
+      
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <app-list-cursos [Titulo]="'Cursos'" [arrayCursos]="this._appService.arrayCursos"></app-list-cursos>
+                    </div>
+                </div>
+      
+      
+                <div class="botao-cadastrar">
+                  <button type="submit" class="btn btn-primary button-positive">Atualizar</button>
+                </div>
+                
+              </form>
+          </div>
+  
+  
+      </article>
+  
+    </section>
+  
+  </main>
+  
+  

@@ -1,0 +1,64 @@
+@import "../../../node_modules/bootstrap/scss/_forms.scss";
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input {
+        height: 2rem;
+        padding: 0 1rem;
+        border-radius: 0;
+        border: solid 1px $azul-padrao;   
+    } 
+}
+.submit-img {
+    input {
+        height: 2rem;
+        height: 2rem;
+        padding: 0 1rem;
+        border-radius: 0;
+        border: solid 1px $azul-padrao;   
+    } 
+}
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+    div {
+        // display: flex;
+        // justify-content: center;
+        .form-area {
+            padding: 5rem;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px 0px $box;
+            -webkit-box-shadow: 2px 2px 5px 0px $box;
+            -moz-box-shadow: 2px 2px 5px 0px $box;
+            h6 {
+                font-weight: 400;
+            }
+            .ul-itens {
+                display: flex;
+                justify-content: space-around;
+                padding: 3rem 8rem;
+                input {
+                    margin: 0.4rem;
+                }
+                @media #{$mobile}{
+                    padding: 11px;
+                }
+            }
+            @media #{$mobile}{
+                padding: 20px;
+            }
+        }
+    }
+ 
+}
+.icon-input {
+    position: absolute;
+    margin-left: -23px;
+    margin-top: 7px;
+    color: $azul-padrao;
+}

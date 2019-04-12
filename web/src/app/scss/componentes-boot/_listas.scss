@@ -1,0 +1,46 @@
+
+.ul-form {
+    list-style: none;        
+    li {
+        label {
+            margin: 0.3rem 0;
+            color: $text;
+        }        
+        
+        select, .select2-container {
+            height: 1.8rem;
+            padding: 0 1rem;
+            border-radius: 0;
+            border: solid 1px $azul-padrao;
+            color: $placeholder;
+        }        
+        textarea {
+            padding: 0 1rem;
+            border-radius: 0;
+            border: solid 1px $azul-padrao;
+        } 
+    }
+    @media #{$mobile}{
+        padding: 0px;
+    }
+}
+    
+.ul-form:first-child {
+    padding: 3rem 1rem 2rem 2rem;
+    @media #{$mobile}{
+        padding: 0px;
+    }
+}        
+form ul:last-child {
+    padding: 3rem 2rem 2rem 1rem;
+    @media #{$mobile}{
+        padding: 0px;
+    }
+}
+
+.ul-listcursos {
+    width: 50%;
+    @media #{$mobile}{
+        width: 100%; 
+    }
+}

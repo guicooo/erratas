@@ -1,0 +1,45 @@
+@import "./scss/default";
+
+.page {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.login {
+    padding: 0;
+}
+
+app-sidebar {
+    padding: 0;
+}
+
+.navbar {
+    height: 4rem;
+}
+
+.conteudo {
+    background-color: #eeeeee;
+    @extend %transition;
+}
+.app-sidebar {
+    @extend %transition;
+}
+.side-open {
+    .app-sidebar {
+        flex: 0 0 8.666667%;
+        max-width: 8.666667%;
+        @media #{$mobile}{
+            flex: 0 0 100%;
+            max-width: 100%; 
+        }
+    }
+    .conteudo {
+        flex: 0 0 91.333333%;
+        max-width: 91.333333%;
+        @media #{$mobile}{
+            flex: 0 0 100%;
+            max-width: 100%; 
+        }
+    }
+}

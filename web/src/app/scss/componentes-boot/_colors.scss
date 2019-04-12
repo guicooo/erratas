@@ -1,0 +1,13 @@
+
+%gradiente_bg {
+    background: #007fa9; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #005190 0%,#007fa9 30%,#1294ac 70%, #5AAD9C 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #005190 0%,#007fa9 30%,#1294ac 70%, #5AAD9C 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #005190 0%,#007fa9 30%,#1294ac 70%, #5AAD9C 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#084688', endColorstr='#144ea0',GradientType=1 ); /* IE6-9 */
+}
+
+$azul-padrao: #008EB1;
+$box: #c7c7c7;
+$text: #333333;
+$placeholder: #909090;

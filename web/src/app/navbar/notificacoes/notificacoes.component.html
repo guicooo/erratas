@@ -1,0 +1,33 @@
+<main class="row col-12 page-body">
+
+    <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+  
+      <nav class="page-nav">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 no-padding">
+          <h1>Notificações</h1>
+          <div class="line"></div>
+        </div>
+      </nav>
+  
+      <article class="row form-container">
+        <div class="col-md-12">
+          <div *ngIf="appService.mensagens.length == 0" class="col-relatorio">
+            <p>Você não tem mensagens até o momento.</p>
+          </div>
+
+          <a *ngFor="let item of appService.mensagens" [routerLink]="[item.Link]">
+            <div class="col-relatorio" [ngClass]="{'active': !item.Visualizado}">
+                  <h5>{{ item.Disciplina }}</h5>
+    
+                  <span>{{ item.DataDeGeracao | date: 'dd/MM/yyyy'}}  - {{ item.DataDeGeracao | date: 'HH:mm:ss'}}</span>
+                  <p>{{ item.Descricao }}</p>
+              </div>
+          </a>
+
+          
+        </div>
+
+  
+      </article>
+    </section>
+  </main>

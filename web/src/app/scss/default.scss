@@ -1,0 +1,102 @@
+@import "./componentes-boot/_colors";
+@import "./componentes-boot/_variables";
+
+hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin-left: -80px;
+    margin-right: -80px;
+    @media(max-width: 1024px) {
+        margin: 0;
+    }
+}
+
+button.glyphicon-button:focus,
+button.glyphicon-button:active:focus,
+button.glyphicon-button.active:focus,
+button.glyphicon-button.focus,
+button.glyphicon-button:active.focus,
+button.glyphicon-button.active.focus,
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+li:focus {
+  outline: none !important;
+}
+
+
+
+
+.page-body {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    padding: 0;
+    .page-container {
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+}
+
+
+table {
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 0px $box;
+    -webkit-box-shadow: 2px 2px 5px 0px $box;
+    -moz-box-shadow: 2px 2px 5px 0px $box;
+}
+
+
+
+
+
+.cursor {
+    cursor: pointer;
+}
+
+
+:host /deep/ .mat-form-field.mat-form-field-invalid .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+    background-color: transparent;
+  }
+    
+  :host /deep/ .mat-form-field-wrapper{
+      padding: 0;
+    .mat-form-field-infix    {
+        border-top: 0;
+    }
+  }
+  :host /deep/ .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent;
+  }
+  :host /deep/ .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: transparent;
+    transition: none !important;
+  }  
+
+  :host /deep/ .mat-form-field {
+    position: inherit;
+  }
+
+  :host /deep/ .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+
+  
+  .disabled {
+    pointer-events: none;
+    input {
+        background: #e9ecef;
+    }
+  }

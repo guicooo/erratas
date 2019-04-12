@@ -1,0 +1,33 @@
+@import "../../scss/default";
+
+.col-relatorio {
+    &.active{
+        h5 {
+            color: $azul-padrao;
+        }
+        p{
+            color: initial;
+        }        
+    }
+    padding: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0px #888888;
+    margin-bottom: 30px;
+    transition: all .5s;
+    h5 {
+        color: #a5a5a5;
+        padding: 0;
+        margin: 0;
+    }
+    span{
+        color: #a5a5a5;
+    }
+    p{
+        color: #a5a5a5;
+        margin: 0;
+        margin-top: 20px;
+    }
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}

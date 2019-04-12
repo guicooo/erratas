@@ -1,0 +1,26 @@
+@import "../../../node_modules/bootstrap/scss/_dropdown.scss";
+
+.dropdown-menu {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 2px 2px 4px 0px #888888;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: $azul-padrao;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: #f3f3f3;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #212529;
+}
+.carret-drop {
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -5px;
+    right: 11px;
+    transform: rotate(43deg);
+}

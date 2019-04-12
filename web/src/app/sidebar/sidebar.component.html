@@ -1,0 +1,110 @@
+
+<div class="sidenav" [ngClass]="{'side-closed': appService.openSide}">
+
+  <div class="btn-closed" (click)="clickClosed()">
+    <span class="line-1"></span>
+    <span class="line-2"></span>
+  </div>
+  <!-- LOGO -->
+ 
+  <div class="col-12 logo-area">
+    <a routerLink="/home">
+      <img class="iconeErratas" src="assets/img/ControleDeErratas_icone.png">
+      <img class="logoErratas"  src="assets/img/ControleDeErratas_logo.png">
+      <img class="logoErratasFull"  src="assets/img/ControleDeErratas_logoo.png">
+    </a>
+  </div>
+
+  <!-- USUÁRIO -->
+  <h6>Bem vindo, {{appService.nomeUsuario}}</h6>
+
+  <!-- LISTA DE LINKS -->
+  <!-- Erratas -->
+  <div class="lista-links" *ngIf="appService.errata">
+    <a  class="links_sidebar" 
+        data-toggle="collapse" 
+        href="#multiCollapseExample1" 
+        role="button" 
+        aria-expanded="false"
+        aria-controls="multiCollapseExample1" 
+        id="gerenciar-erratas"       
+        >
+      <i *ngIf="appService.openSide" class="fas fa-quote-left icons-sidebar"></i>
+      <p class="text-links"><span *ngIf="!appService.openSide">Gerenciar</span> erratas</p>
+    </a>
+    <i class="arrow down"></i>
+  </div>
+  <ul class="collapse multi-collapse links-ocultos" id="multiCollapseExample1">
+    <li  *ngIf="appService.errataCadastrar">
+      <a routerLink="/erratas/adicionar" (click)="clickClosed()">
+        Adicionar
+      </a>
+    </li>
+    <li  *ngIf="appService.errataListar">
+      <a routerLink="/erratas" (click)="clickClosed()">
+        Visualizar
+      </a>
+    </li>
+  </ul>
+
+  <!-- Itens -->
+  <div class="lista-links"  *ngIf="appService.disciplinas || appService.cursos">
+    <a class="links_sidebar" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false"
+      aria-controls="multiCollapseExample2" id="gerenciar-itens">
+      <i *ngIf="appService.openSide" class="fas fa-clipboard-list icons-sidebar"></i>
+      <p class="text-links"><span *ngIf="!appService.openSide">Gerenciar</span> itens</p>
+    </a>
+    <i class="arrow down"></i>
+  </div>
+  <ul class="collapse multi-collapse links-ocultos" id="multiCollapseExample2">
+    <li>
+      <a routerLink="/itens/adicionar" *ngIf="appService.disciplinasCadastrar || appService.cursosCadastrar" (click)="clickClosed()">
+        Adicionar
+      </a>
+    </li>
+    <li>
+      <a routerLink="/itens"   *ngIf="appService.disciplinasListar || appService.cursosListar" (click)="clickClosed()">
+        Visualizar
+      </a>
+    </li>
+  </ul>
+
+  <!-- Usuários -->
+  <div class="lista-links" *ngIf="appService.usuarios">
+    <a class="links_sidebar" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false"
+      aria-controls="multiCollapseExample3" id="gerenciar-usuarios">
+      <i *ngIf="appService.openSide" class="fas fa-user icons-sidebar"></i>
+      <p class="text-links"><span *ngIf="!appService.openSide">Gerenciar</span> usuários</p>
+    </a>
+    <i class="arrow down"></i>
+  </div>
+  <ul class="collapse multi-collapse links-ocultos" id="multiCollapseExample3">
+    <li *ngIf="appService.usuariosCadastrar">
+      <a routerLink="/usuarios/adicionar" (click)="clickClosed()">
+        Adicionar
+      </a>
+    </li>
+    <li *ngIf="appService.usuariosListar">
+      <a routerLink="/usuarios" (click)="clickClosed()">
+        Visualizar
+      </a>
+    </li>
+  </ul>
+
+  <!-- Permissões -->
+  <div class="lista-links" *ngIf="appService.permissoes">
+      <a class="links_sidebar" routerLink="/permissoes" (click)="clickClosed()">
+        <i *ngIf="appService.openSide" class="fas fa-ban icons-sidebar"></i>
+        <p class="text-links">Permissões</p>
+      </a>
+    </div>  
+
+  <!-- Relatórios -->
+  <div class="lista-links" *ngIf="appService.relatorios">
+    <a class="links_sidebar" routerLink="/relatorios" id="relatorios" (click)="clickClosed()">
+      <i *ngIf="appService.openSide" class="fas fa-chart-bar icons-sidebar"></i>
+      <p class="text-links">Relatórios</p>
+    </a>
+  </div>
+
+</div>

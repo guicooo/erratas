@@ -1,0 +1,27 @@
+@import "../scss/default.scss";
+
+.col-relatorio {
+    padding: 45px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0px #888888;
+    padding-top: 65px;
+
+    @media #{$mobile}{margin-bottom: 50px;}
+
+}
+.fa-print {
+    color: $azul-padrao;
+    font-size: 25px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 15px;
+}
+.title {
+    text-align: center;
+    color: $azul-padrao;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -45px;
+}

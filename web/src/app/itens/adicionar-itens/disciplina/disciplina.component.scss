@@ -1,0 +1,28 @@
+@import "../../../scss/default.scss";
+
+h5 {
+    padding-bottom: 2rem;
+    font-weight: 400;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+ 
+}
+
+.select-cursos {
+    display: flex;
+    justify-content: center;
+    label {
+        padding: 0;
+    }
+    input {
+        height: 2rem;
+        padding: 0 1rem;
+        border-radius: 0;
+        border: solid 1px $azul-padrao; 
+    }
+}
+
+

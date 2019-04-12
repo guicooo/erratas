@@ -1,0 +1,92 @@
+@import "../scss/default.scss";
+
+
+.col-relatorio {
+    padding: 45px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0px #888888;
+}
+
+
+.list-permissao {
+    margin-top: 30px;
+    border-bottom: 1px solid $azul-padrao;
+    h6{
+        color: $azul-padrao;
+        font-size: 20px;
+    }
+    table {
+        text-align: center;
+        thead th{
+            text-transform: initial;
+        }
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+        li {
+            display: flex;
+        }
+    }
+}
+
+select {
+    width: 200px;
+    padding: 10px;
+    color: $azul-padrao;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+  input[type="checkbox"] { 
+      position: absolute;
+      opacity: 0;
+  }
+  
+  input[type="checkbox"].ios-switch + div {
+      vertical-align: middle;
+      width: 40px;	height: 20px;
+      border-radius: 999px;
+      background-color: #aaa;
+      -webkit-transition-duration: .4s;
+      -webkit-transition-property: background-color, box-shadow;
+  
+  }
+
+input[type="checkbox"].bigswitch.ios-switch + div {
+	width: 45px;	height: 25px;
+}
+
+input[type="checkbox"].green.ios-switch:checked + div {
+	background-color: #2EB256;
+
+}
+input[type="checkbox"].ios-switch + div > div {
+	float: left;
+	width: 14px; height: 14px;
+	border-radius: inherit;
+	background: #ffffff;
+	-webkit-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+	-webkit-transition-duration: 0.4s;
+	-webkit-transition-property: transform, background-color, box-shadow;
+	-moz-transition-timing-function: cubic-bezier(.54,1.85,.5,1);
+	-moz-transition-duration: 0.4s;
+	-moz-transition-property: transform, background-color;
+	
+	pointer-events: none;
+	margin-top: 1px;
+	margin-left: 1px;
+}
+input[type="checkbox"].ios-switch:checked + div > div {
+	-webkit-transform: translate3d(21px, 0, 0);
+	-moz-transform: translate3d(21px, 0, 0);
+	background-color: #ffffff;
+	
+}
+input[type="checkbox"].bigswitch.ios-switch + div > div {
+	width: 21px; height: 21px;
+	margin-top: 2px;
+
+}
+

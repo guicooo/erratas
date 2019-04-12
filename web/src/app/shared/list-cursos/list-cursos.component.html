@@ -1,0 +1,23 @@
+<div class="row no-margin">
+  <li class="form-group" style="width: 100%;">
+
+    <label for="curso">{{Titulo}}</label>
+    <mat-form-field class="example-full-width">
+      <input id="curso" type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="curso" [(ngModel)]="inputCurso"  required>
+      <i class="fas fa-search icon-input"></i>
+      <mat-autocomplete autoActiveFirstOption #curso="matAutocomplete" (optionSelected)='getCursos($event.option.value)'>
+        <mat-option *ngFor="let option of filtroCursos | async" [value]="option.Id +' - '+ option.Nome">
+          {{option.Nome}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    
+  </li>
+    
+  <ul class="listaCursos" >
+    <li *ngFor="let item of arrayCursos">
+      <span>{{item.Nome}}</span>
+      <i class="fas fa-times text-center" (click)="removeCurso(item.Id)"></i>
+    </li>
+  </ul>        
+</div>

@@ -1,0 +1,27 @@
+@import "../scss/default";
+
+.iconeErratas {
+    display: none;
+    @media #{$mobile}{
+        display: block;
+        width: 50px;
+        margin-left: 18px;
+    }
+
+}
+
+.alert-red {
+    display: none;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+.notificacao {
+    .alert-red {display: block;}
+    
+}

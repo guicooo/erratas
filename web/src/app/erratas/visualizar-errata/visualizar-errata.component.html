@@ -1,0 +1,100 @@
+<main class="row col-12 page-body">
+
+  <section class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 page-container">
+
+    <nav class="page-nav">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h1>Erratas cadastradas</h1>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <article class="form-container">
+      <div class="col-12">
+        <div class="table-responsive">
+          <table class="table col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Funcionário</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Disciplina</th>
+                <th *ngIf="_appService.errataObter" scope="col"></th>
+                <th *ngIf="_appService.errataAtualizar" scope="col"></th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of errataList | paginate: { itemsPerPage: 10, currentPage: p }">
+                <td>{{ item.CodigoModelo }}</td>
+                <td>{{ item.ResponsavelInsercao.Nome }}</td>
+                <td>{{ item.ErrataCursos.length }}</td>
+                <td>{{ item.Disciplina.Nome }}</td>
+                <td *ngIf="_appService.errataObter"><i class="fas fa-eye"  data-target="#modalVisualizar" data-toggle="modal" (click)="visualizaModal(item.Id, item.CodigoModelo)"></i></td>
+                <td *ngIf="_appService.errataAtualizar"><i class="fas fa-pen" [routerLink]="'editar/' + item.Id"></i></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+    <pagination-controls 
+                          (pageChange)="p = $event"
+                          maxSize = "5"
+                          autoHide="true"
+                          responsive="true"
+                          previousLabel=""
+                          nextLabel=""
+                          directionLinks = "true">
+                          
+  </pagination-controls>
+  </section>
+</main>
+
+
+<!-- Modal DETALHES-->
+<div class="modal fade" id="modalVisualizar" tabindex="-1" role="dialog" aria-labelledby="modalVisualizarLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalVisualizarLabel">Errata {{ errataCod }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 40px;">
+        <p><b>Disciplina:  </b>{{errata?.Disciplina.Nome}}</p>
+        <p><b>Código oferta:  </b>{{errata?.CodigoOferta}}</p>
+        <p><b>Data de solicitação:  </b>{{errata?.DataDeSolicitacao}}</p>
+
+        <p><b>Instituto:  </b>{{errata?.Instituto.Descricao}}</p>
+        <p><b>Motivo Errata:  </b>{{errata?.MotivoErrata?.Descricao}}</p>
+        <p><b>Professor:  </b>{{errata?.Professor}}</p>
+        <p><b>Unidade:  </b>{{errata?.Unidade.Nome}}</p>
+        <ul style="padding: 0;">
+          <b>Cursos:  </b>
+          <li *ngFor="let item of errataCursos" style="margin-left: 50px">{{item.Nome}}</li>
+        </ul>
+        <p><b>Responsável pela inserção:  </b>{{errata?.ResponsavelInsercao.Nome}} {{errata?.ResponsavelInsercao.SobreNome}}</p>
+        <p><b>Responsável pela revisão:  </b>{{errata?.ResponsavelInsercao.Nome}} {{errata?.ResponsavelInsercao.SobreNome}}</p>
+
+        <ul class="arrayImg">
+          <p><b>Imagens:  </b></p>
+          <li *ngFor="let item of errataImagens">
+              <a target="_blank" [href]="this._appService.url + item.Caminho">
+                <img [src]="this._appService.url + item.Caminho" width="100%">
+              </a>
+          </li>
+        </ul>        
+
+        <p><b>Descrição:  </b>{{errata?.Descricao}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" #btnClose class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

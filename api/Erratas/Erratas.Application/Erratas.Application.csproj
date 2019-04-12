@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85673219-14F8-45BB-AF25-C3E2C9608361}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Erratas.Application</RootNamespace>
+    <AssemblyName>Erratas.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.0.101\lib\net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\DisciplinaAdapter.cs" />
+    <Compile Include="Adapters\ErrataAdapter.cs" />
+    <Compile Include="Adapters\LogAdapter.cs" />
+    <Compile Include="Adapters\ModeloAdapter.cs" />
+    <Compile Include="Adapters\UsuarioAdapter.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Adapters\CargoPermissaoAdapter.cs" />
+    <Compile Include="Adapters\MensagemAdapter.cs" />
+    <Compile Include="Adapters\MenuAdapter.cs" />
+    <Compile Include="Interfaces\Services\ICargoAppService.cs" />
+    <Compile Include="Interfaces\Services\ICargoPermissaoAppService.cs" />
+    <Compile Include="Interfaces\Services\ICursoAppService.cs" />
+    <Compile Include="Interfaces\Services\IDepartamentoAppService.cs" />
+    <Compile Include="Interfaces\Services\IDisciplinaAppService.cs" />
+    <Compile Include="Interfaces\Services\IErrataAppService.cs" />
+    <Compile Include="Interfaces\Services\IExtrapolacaoAppService.cs" />
+    <Compile Include="Interfaces\Services\IInstitutoAppService.cs" />
+    <Compile Include="Interfaces\Services\IItemAppService.cs" />
+    <Compile Include="Interfaces\Services\ILogAppService.cs" />
+    <Compile Include="Interfaces\Services\IMensagemAppService.cs" />
+    <Compile Include="Interfaces\Services\IMenuAppService.cs" />
+    <Compile Include="Interfaces\Services\IModeloAppService.cs" />
+    <Compile Include="Interfaces\Services\IMotivoErrataAppService.cs" />
+    <Compile Include="Interfaces\Services\IPermissaoAppService.cs" />
+    <Compile Include="Interfaces\Services\IRelatorioAppService.cs" />
+    <Compile Include="Interfaces\Services\IUnidadeAppService.cs" />
+    <Compile Include="Interfaces\Services\IUsuarioAppService.cs" />
+    <Compile Include="Models\Cargos\CargoAtualizarModel.cs" />
+    <Compile Include="Models\Cargos\CargoModel.cs" />
+    <Compile Include="Models\Cargos\CargoPermissaoModel.cs" />
+    <Compile Include="Models\Cargos\CargoPermissaoModuloModel.cs" />
+    <Compile Include="Models\Cursos\AtualizarCursoModel.cs" />
+    <Compile Include="Models\Cursos\CursoModel.cs" />
+    <Compile Include="Models\Disciplinas\AtualizarDisciplinaModel.cs" />
+    <Compile Include="Models\Disciplinas\DisciplinaModel.cs" />
+    <Compile Include="Models\Disciplinas\ObterDisciplinaModel.cs" />
+    <Compile Include="Models\Erratas\ErrataModel.cs" />
+    <Compile Include="Models\Erratas\ImagemErrataModel.cs" />
+    <Compile Include="Models\Erratas\ObterErrataModel.cs" />
+    <Compile Include="Models\Logs\ObterLogModel.cs" />
+    <Compile Include="Models\Mensagens\MensagemModel.cs" />
+    <Compile Include="Models\Menu\CargoMenuModel.cs" />
+    <Compile Include="Models\Menu\LogMenuModel.cs" />
+    <Compile Include="Models\Menu\MenuModel.cs" />
+    <Compile Include="Models\Menu\ModuloMenuModel.cs" />
+    <Compile Include="Models\Menu\PermissaoMenuModel.cs" />
+    <Compile Include="Models\Menu\UsuarioMenuModel.cs" />
+    <Compile Include="Models\Modelo\DisciplinaModeloModel.cs" />
+    <Compile Include="Models\Modelo\ModeloModel.cs" />
+    <Compile Include="Models\Modulo\ModuloModel.cs" />
+    <Compile Include="Models\Relatorios\RelatorioModel.cs" />
+    <Compile Include="Models\Relatorios\RelatorioDepartamentoModel.cs" />
+    <Compile Include="Models\Relatorios\RelatorioUsuarioModel.cs" />
+    <Compile Include="Models\Usuarios\CadastrarSenhaModel.cs" />
+    <Compile Include="Models\Cargos\ObterCargoModel.cs" />
+    <Compile Include="Models\Permissoes\PermissaoModel.cs" />
+    <Compile Include="Models\Usuarios\ObterUsuarioModel.cs" />
+    <Compile Include="Models\Usuarios\TrocarSenha.cs" />
+    <Compile Include="Models\Usuarios\UsuarioAtualizarModel.cs" />
+    <Compile Include="Models\Usuarios\UsuarioModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CargoAppService.cs" />
+    <Compile Include="Services\CargoPermissaoAppService.cs" />
+    <Compile Include="Services\CursoAppService.cs" />
+    <Compile Include="Services\DepartamentoAppService.cs" />
+    <Compile Include="Services\DisciplinaAppService.cs" />
+    <Compile Include="Services\ErrataAppService.cs" />
+    <Compile Include="Services\ExtrapolacaoAppService.cs" />
+    <Compile Include="Services\InstitutoAppService.cs" />
+    <Compile Include="Services\ItemAppService.cs" />
+    <Compile Include="Services\LogAppService.cs" />
+    <Compile Include="Services\MensagemAppService.cs" />
+    <Compile Include="Services\MenuAppService.cs" />
+    <Compile Include="Services\ModeloAppService.cs" />
+    <Compile Include="Services\MotivoErrataAppService.cs" />
+    <Compile Include="Services\PermissaoAppService.cs" />
+    <Compile Include="Services\RelatorioAppService.cs" />
+    <Compile Include="Services\UnidadeAppService.cs" />
+    <Compile Include="Services\UsuarioAppService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Erratas.Domain\Erratas.Domain.csproj">
+      <Project>{8f8d7ca7-976f-4036-b3c9-c3d6c6326d4a}</Project>
+      <Name>Erratas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Erratas.Infra.Data\Erratas.Infra.Data.csproj">
+      <Project>{40bd3690-9c9b-4052-b12b-4b5da61138eb}</Project>
+      <Name>Erratas.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
